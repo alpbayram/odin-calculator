@@ -9,6 +9,10 @@
 	
 }
 
+@font-face {
+    font-family: myFirstFont;
+    src: url(digital.ttf);
+}
 img {
 	display: flex;
 
@@ -23,7 +27,7 @@ span {
 	display: flex;
 	width: 100vw;
 	height: 100vh;
-	background-color: #548687;
+	background-color: #1E1E2F;
 	justify-content: center;
 	align-items: center;
 flex-direction: column;
@@ -32,7 +36,7 @@ flex-direction: column;
 .centered-container {
 	display: flex;
 	
-	background-color: #1d3849;
+	background-color: #2D2D44;
 	
 	flex-basis: 133.33vw; 
 	flex-direction: column;
@@ -54,11 +58,24 @@ flex-direction: column;
 	display: flex;
 	flex-basis: 15%;
 	background-color: #1C1C1C;
+	color: #D3D3D3;
+	
+}
+.indicator{
+	display: flex;
+	flex-basis: 25%;
+	justify-content: center;
+	align-content: center;
 }
 .display{
 display: flex;
 flex-grow: 1;
-background-color: #505050;
+background-color: #303B4D ;
+font-size: calc(5vh + 4vw);
+justify-content: flex-end;
+align-items: flex-end;
+font-family: myFirstFont;
+color: #FFFFFF;
 }
 .button-container{
 	display: flex;
@@ -81,11 +98,22 @@ background-color: #505050;
 	align-items: center;
 	flex-basis: calc(18% - 0.8vh); 
 	align-content: center;
-	background-color: #a2bbcf;
+	background-color: #4E4E6A;
 	border-radius: 5vh;
 	flex-grow: 0;
 	flex-shrink: 1;
-	
+	transition: background-color 0.3s ease;
+	color: #FFFFFF;
+}
+.button:hover {
+    background-color: #7777FF;
+	color: #E0E6ED ;
+}
+.operator,.all-clear,.clear{
+	background-color: #6363FF; /* İşlem ve özel butonlar için farklı renk */
+}
+.operator:hover,.all-clear:hover,.clear:hover{
+	background-color: #3d3d66; /* İşlem ve özel butonlar için farklı renk */
 }
 .row{
 	display: flex;
