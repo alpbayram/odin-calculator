@@ -104,6 +104,7 @@ color: #FFFFFF;
 	flex-shrink: 1;
 	transition: background-color 0.3s ease;
 	color: #FFFFFF;
+	cursor: pointer;
 }
 .button:hover {
     background-color: #7777FF;

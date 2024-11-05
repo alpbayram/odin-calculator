@@ -27,18 +27,42 @@ const allClear = document.querySelector(".all-clear");
 const clear = document.querySelector(".clear");
 const decimal = document.querySelector(".decimal");
 
+document.addEventListener("keydown", (event) => {
+	// bu chatgpt promptu ile yaptım
+    const key = event.key; 
+    if (key >= 0 && key <= 9) { 
+        
+        buttonClick({ currentTarget: { id: key } });
+    } else if (key === "+") {
+        // "+" tuşu için toplama işlemini çağır
+        operate({ currentTarget: { id: "addition" } });
+    } else if (key === "-") {
+        operate({ currentTarget: { id: "minus" } });
+    } else if (key === "*") {
+        operate({ currentTarget: { id: "multiply" } });
+    } else if (key === "/") {
+        operate({ currentTarget: { id: "divide" } });
+    } else if (key === "Enter") {
+        operate({ currentTarget: { id: "equals" } });
+    } else if (key === "Backspace") {
+        // Geri tuşu için silme işlemini çağır
+        clear.click();
+    } else if (key === ".") {
+        decimal.click();
+    }
+});44
 decimal.addEventListener("click", (e) => {
 	if (result !== "") {
 		allClearFunction();
 	} else if (indicatorDiv == true) {
-		if (displayArray2.includes(".") == false && choice2 !== "-" && choice2 !== "") {
+		if (displayArray2.includes(".") == false && choice2 !== "-" && choice2 !== ""&&displayArray2.length<9) {
 			displayArray2.push(".");
 			joinedDisplayArray2 = displayArray2.join("");
 			display.textContent = `${joinedDisplayArray2}`;
 			choice2 = joinedDisplayArray2;
 		}
 	} else if (indicatorDiv == false) {
-		if (displayArray.includes(".") == false && choice1 !== "-" && choice1 !== "") {
+		if (displayArray.includes(".") == false && choice1 !== "-" && choice1 !== ""&&displayArray.length<9) {
 			displayArray.push(".");
 			joinedDisplayArray = displayArray.join("");
 			display.textContent = `${joinedDisplayArray}`;
@@ -155,8 +179,7 @@ function indicatorState(state) {
 	});
 }
 function buttonClick(e) {
-	if (!displayArray.length > 8 || !displayArray2.length > 8) {
-	}
+	
 	if (indicatorDiv == false) {
 		if (result !== "") {
 			console.log("KONTROL");
@@ -167,7 +190,19 @@ function buttonClick(e) {
 			clickedNumber = e.currentTarget.id;
 			console.log(e.currentTarget, "button click hedef targeti");
 			console.log(`${clickedNumber}`, "basılan tuş");
-			displayArray.push(clickedNumber);
+			if(displayArray.includes(".")){
+				if (displayArray.length < 11) {
+					displayArray.push(clickedNumber);
+				}
+			}else{
+				if (displayArray.length < 10) {
+					displayArray.push(clickedNumber);
+				}
+			}
+			
+			
+
+
 			console.log(displayArray, "ekrana yazdırılan ilk choice arrayi");
 			joinedDisplayArray = displayArray.join("");
 			display.textContent = `${joinedDisplayArray}`;
@@ -178,7 +213,15 @@ function buttonClick(e) {
 			clickedNumber = e.currentTarget.id;
 			console.log(e.currentTarget, "button click hedef targeti");
 			console.log(`${clickedNumber}`, "basılan tuş");
-			displayArray.push(clickedNumber);
+			if(displayArray.includes(".")){
+				if (displayArray.length < 10) {
+					displayArray.push(clickedNumber);
+				}
+			}else{
+				if (displayArray.length < 9) {
+					displayArray.push(clickedNumber);
+				}
+			}
 			console.log(displayArray, "ekrana yazdırılan ilk choice arrayi");
 			joinedDisplayArray = displayArray.join("");
 			display.textContent = `${joinedDisplayArray}`;
@@ -195,7 +238,15 @@ function buttonClick(e) {
 			console.log(e.currentTarget);
 
 			console.log(`${clickedNumber}`);
-			displayArray2.push(clickedNumber);
+			if(displayArray2.includes(".")){
+				if (displayArray2.length < 10) {
+					displayArray2.push(clickedNumber);
+				}
+			}else{
+				if (displayArray2.length < 9) {
+					displayArray2.push(clickedNumber);
+				}
+			}
 			joinedDisplayArray2 = displayArray2.join("");
 			display.textContent = `${joinedDisplayArray2}`;
 			console.log(displayArray2);
