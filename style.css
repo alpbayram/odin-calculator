@@ -20,27 +20,31 @@ img {
 }
 span {
 	display: flex;
-	font-size: clamp(0.5rem, 5vh, 3rem);
+	font-size: clamp(2rem, 5vh , 4rem);
 	
 }
 .container {
 	display: flex;
 	width: 100dvw;
 	height: 100dvh;
-	background-color: #1E1E2F;
+	background-color: #8c5d3b;
 	justify-content: center;
 	align-items: center;
 flex-direction: column;
+background-image:url(misc/background.jpg);
+background-repeat: no-repeat;
+background-size: cover;
+
 }
 
 .centered-container {
 	display: flex;
-	
-	background-color: #2D2D44;
+	  overflow: hidden;
+	background-color: #3b3853;
 	
 	flex-basis: 133.33vw; 
 	flex-direction: column;
-
+	border-radius: 1rem;
 	aspect-ratio: 3 / 4;
 	justify-content: center;
 	align-items: center;
@@ -52,12 +56,13 @@ flex-direction: column;
 	width: 95%;
 	margin-top: 2.5vh;
 	margin-bottom:2.5vh;
-	
+	border-radius: 1rem;
+	overflow: hidden;
 }
 .indicator-container{
 	display: flex;
 	flex-basis: 15%;
-	background-color: #1C1C1C;
+	background-color: #322020;
 	color: #D3D3D3;
 	
 }
@@ -66,16 +71,21 @@ flex-direction: column;
 	flex-basis: 25%;
 	justify-content: center;
 	align-content: center;
+	align-items: center;
+	font-size: clamp(0.1rem, 2vh , 5rem);
+	
 }
 .display{
 display: flex;
 flex-grow: 1;
-background-color: #303B4D ;
-font-size: calc(5vh + 4vw);
+background-color: #d5e3e4;
+font-size: clamp(2rem, 6vh + 4vw, 30rem);
 justify-content: flex-end;
 align-items: flex-end;
 font-family: myFirstFont;
-color: #FFFFFF;
+color: black;
+padding: 1vh;
+
 }
 .button-container{
 	display: flex;
@@ -98,8 +108,8 @@ color: #FFFFFF;
 	align-items: center;
 	flex-basis: calc(18% - 0.8vh); 
 	align-content: center;
-	background-color: #4E4E6A;
-	border-radius: 5vh;
+	background-color: #868692;
+	border-radius: 1rem;
 	flex-grow: 0;
 	flex-shrink: 1;
 	transition: background-color 0.3s ease;
@@ -107,14 +117,23 @@ color: #FFFFFF;
 	cursor: pointer;
 }
 .button:hover {
-    background-color: #7777FF;
+    background-color: #4e4e57;
 	color: #E0E6ED ;
 }
-.operator,.all-clear,.clear{
-	background-color: #6363FF; /* İşlem ve özel butonlar için farklı renk */
+.operator{
+	background-color: #191923; /* İşlem ve özel butonlar için farklı renk */
 }
-.operator:hover,.all-clear:hover,.clear:hover{
-	background-color: #3d3d66; /* İşlem ve özel butonlar için farklı renk */
+.all-clear,.clear{
+	background-color: #b86382;
+
+}
+.all-clear:hover,.clear:hover{
+	background-color: #c42424;
+
+}
+
+.operator:hover{
+	background-color: #000000; /* İşlem ve özel butonlar için farklı renk */
 }
 .row{
 	display: flex;
